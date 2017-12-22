@@ -11,7 +11,7 @@ var TWEET = new Twit(config);
 tweetIt();
 
 // this make the bot tweet every 24 Hours
-setInterval(tweetIt, 1000*20);
+setInterval(tweetIt, 1000*60*60*24);
 
 function tweetIt() {
 
