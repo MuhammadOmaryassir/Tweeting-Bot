@@ -15,7 +15,7 @@ setInterval(tweetIt, 1000*20);
 
 function tweetIt() {
 
-var r = Math.floor(Math.random()*5) + 1;
+var r = Math.floor(Math.random()*49) + 1;
 
 	fs.readFile('./Messages/'+r+'.txt', 'utf8', function(err, data) {
 
