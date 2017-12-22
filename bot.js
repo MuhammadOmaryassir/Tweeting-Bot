@@ -2,7 +2,6 @@ console.log('It,worked');
 
 
 var Twit = require('twit'); // importing the Twitter Module
-const randomFile = require('select-random-file') // importing the randomFile Module
 var config = require('./Config'); // importing the outh Module
 var fs = require('fs'); // importing files Module
 
@@ -16,12 +15,14 @@ setInterval(tweetIt, 1000*20);
 
 function tweetIt() {
 
+var r = Math.floor(Math.random()*5) + 1;
+
+	fs.readFile('./Messages/'+r+'.txt', 'utf8', function(err, data) {
 
 
-	fs.readFile('./Messages/1.txt', 'utf8', function(err, data) {
 			if (err) throw err;
 			var tweet = {
-				status: '   بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ  '  + data +'  صدق اللَّهُ العظيم   ' + ' #TwitterBot'
+				status: '   بِسْمِ اللَّهِ الرَّحْمَنِ الرَّحِيمِ  '  + data +'  صدق اللَّهُ العظيم   ' + ' #TweetingBot'
 			}
 			TWEET.post('statuses/update', tweet, tweeted);
 
