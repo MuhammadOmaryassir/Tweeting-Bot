@@ -6,7 +6,7 @@ var fs = require('fs'); // importing files Module
 var TWEET = new Twit(config);
 
 tweetIt();
-setInterval(tweetIt, 1000 * 60 * 60 * 24 * 7 ); // this make the bot tweet once in a  week
+setInterval(tweetIt, 1000 * 604800); // this make the bot tweet once in a  week
 
 function tweetIt() {
 
